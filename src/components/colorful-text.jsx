@@ -1,6 +1,7 @@
 "use client";
 import React from "react";
-import { motion } from "motion/react"
+// eslint-disable-next-line no-unused-vars
+import { motion } from "motion/react";
 
 export function ColourfulText({ text }) {
   const colors = [

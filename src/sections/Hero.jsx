@@ -1,6 +1,8 @@
 import React from "react";
 import { words } from "../constants";
 import { ColourfulText } from "../components/colorful-text";
+import Button from "../components/Button";
+import HeroExperience from "./../components/HeroModels/HeroExperience";
 
 const Hero = () => {
   return (
@@ -34,11 +36,27 @@ const Hero = () => {
                 </span>
               </h1>
               <h1>into Real-World Impact</h1>
-              <h1>that <ColourfulText text="Matters" /></h1>
+              <h1>
+                that <ColourfulText text="Matters" />
+              </h1>
             </div>
+            <p className="text-white-50 md:text-xl relative z-10 pointer-events-none">
+              Hi, I'm Jorge — crafting digital experiences from Mexico with code
+              that transforms ideas into reality.
+            </p>
+            <Button
+              className="md:w-80 md:h-16 w-60 h-12"
+              id="button"
+              text="See my Work"
+            />
           </div>
         </header>
         {/*RIGHT: 3D MODEL*/}
+        <figure>
+          <div className="hero-3d-layout">
+            <HeroExperience />
+          </div>
+        </figure>
       </div>
     </section>
   );
