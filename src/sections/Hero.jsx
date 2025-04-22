@@ -1,5 +1,6 @@
 import React from "react";
 import { words } from "../constants";
+import { ColourfulText } from "../components/colorful-text";
 
 const Hero = () => {
   return (
@@ -16,9 +17,9 @@ const Hero = () => {
                 Turning
                 <span className="slide">
                   <span className="wrapper">
-                    {words.map((word) => (
+                    {words.map((word, index) => (
                       <span
-                        key={word.text}
+                        key={`${word.text}-${index}`}
                         className="flex items-center md:gap-3 gap-1 pb-2"
                       >
                         <img
@@ -32,8 +33,8 @@ const Hero = () => {
                   </span>
                 </span>
               </h1>
-              <h1>into Real World Impact</h1>
-              <h1>that Matters</h1>
+              <h1>into Real-World Impact</h1>
+              <h1>that <ColourfulText text="Matters" /></h1>
             </div>
           </div>
         </header>
