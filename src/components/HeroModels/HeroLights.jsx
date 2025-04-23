@@ -23,7 +23,7 @@ const HeroLights = () => {
         intensity={60}
         angle={0.3}
         penumbra={1}
-        color="#9d4edd"
+        color="#cc00cc"
       />
       <primitive
         object={new THREE.RectAreaLight("#A259FF", 8, 3, 2)}
