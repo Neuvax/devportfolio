@@ -2,7 +2,6 @@ import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
-import { g } from "motion/react-client";
 
 gsap.registerPlugin(ScrollTrigger);
 
