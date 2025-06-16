@@ -5,17 +5,17 @@ import { motion } from "motion/react";
 
 export function ColourfulText({ text }) {
   const colors = [
-    "rgb(131, 179, 32)",
-    "rgb(47, 195, 106)",
-    "rgb(42, 169, 210)",
-    "rgb(4, 112, 202)",
-    "rgb(107, 10, 255)",
-    "rgb(183, 0, 218)",
-    "rgb(218, 0, 171)",
-    "rgb(230, 64, 92)",
-    "rgb(232, 98, 63)",
-    "rgb(249, 129, 47)",
-  ];
+  "rgb(176, 224, 230)",
+  "rgb(72, 209, 204)",  
+  "rgb(0, 191, 255)",   
+  "rgb(30, 144, 255)",   
+  "rgb(106, 90, 205)",  
+  "rgb(123, 104, 238)", 
+  "rgb(95, 158, 160)",  
+  "rgb(70, 130, 180)",   
+  "rgb(25, 25, 112)",  
+  "rgb(72, 61, 139)",   
+]
 
   const [currentColors, setCurrentColors] = React.useState(colors);
   const [count, setCount] = React.useState(0);

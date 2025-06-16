@@ -60,11 +60,11 @@ const Showcase = () => {
                 Apple iPhone 15 Landing Page
               </h2>
               <p className="text-white-50 md:text-xl">
-                I built this project using React, Tailwind CSS, GSAP, and
-                Three.js. I learned to integrate advanced animations and 3D
-                graphics into a responsive React app. The main challenges were
-                optimizing performance, synchronizing animations, and combining
-                multiple modern technologies in a clean, maintainable way.
+                This project was built using React, Tailwind CSS, GSAP, and
+                Three.js. It integrates advanced animations and 3D graphics into
+                a responsive React app. The main challenges were optimizing
+                performance, synchronizing animations, and combining modern
+                technologies in a clean, maintainable way.
               </p>
             </div>
           </div>

@@ -8,14 +8,14 @@ const Navbar = () => {
     const handleScroll = () => {
       const isScrolled = window.scrollY > 10;
       if (isScrolled !== scrolled) {
-        setScrolled(true);
+        setScrolled(isScrolled);
       }
     };
     window.addEventListener("scroll", handleScroll);
     return () => {
       window.removeEventListener("scroll", handleScroll);
     };
-  }, []);
+  }, [scrolled]);
 
   return (
     <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>

@@ -38,47 +38,58 @@ const counterItems = [
 const logoIconsList = [
   {
     imgPath: "/images/logos/company-logo-1.png",
+    name: "Company 1"
   },
   {
     imgPath: "/images/logos/company-logo-2.png",
+    name: "Company 2"
   },
   {
     imgPath: "/images/logos/company-logo-3.png",
+    name: "Company 3"
   },
   {
     imgPath: "/images/logos/company-logo-4.png",
+    name: "Company 4"
   },
   {
     imgPath: "/images/logos/company-logo-5.png",
+    name: "Company 5"
   },
   {
     imgPath: "/images/logos/company-logo-6.png",
+    name: "Company 6"
   },
   {
     imgPath: "/images/logos/company-logo-7.png",
+    name: "Company 7"
   },
   {
     imgPath: "/images/logos/company-logo-8.png",
+    name: "Company 8"
   },
   {
     imgPath: "/images/logos/company-logo-9.png",
+    name: "Company 9"
   },
   {
     imgPath: "/images/logos/company-logo-10.png",
+    name: "Company 10"
   },
   {
     imgPath: "/images/logos/company-logo-11.png",
+    name: "Company 11"
   },
 ];
 
 const abilities = [
   {
-    imgPath: "/images/problem-solving.png", // Make sure to add this icon to your images folder
+    imgPath: "/images/problem-solving.png", 
     title: "Problem Solving",
     desc: "Approaching challenges with creativity and logic to deliver effective solutions.",
   },
   {
-    imgPath: "/images/teamwork.png", // Make sure to add this icon to your images folder
+    imgPath: "/images/teamwork.png",
     title: "Teamwork",
     desc: "Collaborating efficiently with teams to achieve shared goals and deliver success.",
   },
@@ -148,44 +159,51 @@ const techStackIcons = [
 const expCards = [
   {
     review:
-      "Adrian brought creativity and technical expertise to the team, significantly improving our frontend performance. His work has been invaluable in delivering faster experiences.",
-    imgPath: "/images/exp1.png",
-    logoPath: "/images/logo1.png",
-    title: "Frontend Developer",
-    date: "January 2023 - Present",
+      "Jorge’s personal projects reflect his innovative thinking and technical versatility, especially in web development.",
+    imgPath: "/images/project1.png",
+    logoPath: "/images/developer.png", 
+    title: "Personal Projects Developer",
+    date: "2021 - Present",
     responsibilities: [
-      "Developed and maintained user-facing features for the Hostinger website.",
-      "Collaborated closely with UI/UX designers to ensure seamless user experiences.",
-      "Optimized web applications for maximum speed and scalability.",
+      "Designed and built interactive web applications using React and Three.js.",
+      "Integrated animations and visual effects using GSAP for enhanced user engagement.",
+      "Deployed projects to cloud platforms and maintained version control with Git.",
+      "Continuously improved projects based on user feedback and self-assessment.",
     ],
   },
   {
     review:
-      "Adrian’s contributions to Docker's web applications have been outstanding. He approaches challenges with a problem-solving mindset.",
-    imgPath: "/images/exp2.png",
+      "Jorge demonstrated strong problem-solving skills and technical proficiency while leading a major academic project. His dedication to quality and continuous learning stands out.",
+    imgPath: "/images/project2.png",
     logoPath: "/images/logo2.png",
-    title: "Full Stack Developer",
-    date: "June 2020 - December 2023",
+    title: "Academic Project Lead",
+    date: "September 2023 - May 2024",
     responsibilities: [
-      "Led the development of Docker's web applications, focusing on scalability.",
-      "Worked with backend engineers to integrate APIs seamlessly with the frontend.",
-      "Contributed to open-source projects that were used with the Docker ecosystem.",
+      "Led a team of peers in developing a full-stack web application using React, Node.js, and MongoDB.",
+      "Collaborated with team members to design user interfaces and implement responsive layouts.",
+      "Conducted code reviews and ensured best practices for maintainability and performance.",
+      "Presented project results to faculty and industry professionals, receiving positive feedback.",
     ],
   },
   {
     review:
-      "Adrian’s work on Appwrite’s mobile app brought a high level of quality and efficiency. He delivered solutions that enhanced our mobile experience & meet our product goals.",
-    imgPath: "/images/exp3.png",
-    logoPath: "/images/logo3.png",
-    title: "React Native Developer",
-    date: "March 2019 - May 2020",
+      "Jorge's project is an outstanding application of compiler engineering and AI, creating a practical tool that directly addresses developer productivity. The system's ability to analyze code, classify its paradigm, and suggest automated fixes before a commit is a significant innovation.",
+    imgPath: "/images/team_overview.png",
+    logoPath: "/images/c3ai-logo.png", 
+    title: "AI-Powered Pre-Commit Static Analyzer and Code Repair Agent",
+    date: "February 2025 - June 2025",
     responsibilities: [
-      "Built cross-platform mobile apps using React Native, integrating with Appwrite's backend services.",
-      "Improved app performance and user experience through code optimization and testing.",
-      "Coordinated with the product team to implement features based on feedback.",
+      "Designed and implemented an intelligent agent, SWE-Agent Fixer, to automatically detect and remediate common coding errors in Python and Java during the Git commit process.",
+      "Engineered a custom compiler front-end to perform lexical and syntactic analysis, capable of classifying source code as Object-Oriented, Procedural, or a hybrid paradigm.",
+      "The compiler extracts Abstract Syntax Trees (ASTs) to enable deep static analysis of the code's structure, providing rich context for the AI model.",
+      "Fine-tuned a local Large Language Model (qwen-cybersecurity-2.5-7b) on a curated dataset to specialize in generating accurate, context-aware code corrections.",
+      "Developed a seamless workflow integration using a pre-commit Git hook that communicates with a local API server, automating the analysis and repair cycle without disrupting the developer.",
+      "Architected a novel hybrid agent-pipeline system that integrates a BM25 retriever to efficiently locate relevant code context, significantly enhancing the agent's accuracy.",
+      "This project was selected by C3.ai executives from over 30 competing teams for a special presentation, recognizing its technical innovation and practical impact.",
     ],
-  },
+  }
 ];
+
 
 const expLogos = [
   {

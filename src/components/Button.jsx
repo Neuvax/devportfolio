@@ -17,7 +17,7 @@ const Button = ({ text, className, id }) => {
           window.scrollTo({ top, behavior: "smooth" });
         }
       }}
-      className={`${className ?? ""} cta-wrapper`}
+      className={`${className ?? ""} cta-wrapper ` }
     >
       <div className="cta-button group">
         <div className="bg-circle" />
