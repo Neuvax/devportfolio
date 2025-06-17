@@ -38,53 +38,53 @@ const counterItems = [
 const logoIconsList = [
   {
     imgPath: "/images/logos/company-logo-1.png",
-    name: "Company 1"
+    name: "Company 1",
   },
   {
     imgPath: "/images/logos/company-logo-2.png",
-    name: "Company 2"
+    name: "Company 2",
   },
   {
     imgPath: "/images/logos/company-logo-3.png",
-    name: "Company 3"
+    name: "Company 3",
   },
   {
     imgPath: "/images/logos/company-logo-4.png",
-    name: "Company 4"
+    name: "Company 4",
   },
   {
     imgPath: "/images/logos/company-logo-5.png",
-    name: "Company 5"
+    name: "Company 5",
   },
   {
     imgPath: "/images/logos/company-logo-6.png",
-    name: "Company 6"
+    name: "Company 6",
   },
   {
     imgPath: "/images/logos/company-logo-7.png",
-    name: "Company 7"
+    name: "Company 7",
   },
   {
     imgPath: "/images/logos/company-logo-8.png",
-    name: "Company 8"
+    name: "Company 8",
   },
   {
     imgPath: "/images/logos/company-logo-9.png",
-    name: "Company 9"
+    name: "Company 9",
   },
   {
     imgPath: "/images/logos/company-logo-10.png",
-    name: "Company 10"
+    name: "Company 10",
   },
   {
     imgPath: "/images/logos/company-logo-11.png",
-    name: "Company 11"
+    name: "Company 11",
   },
 ];
 
 const abilities = [
   {
-    imgPath: "/images/problem-solving.png", 
+    imgPath: "/images/problem-solving.png",
     title: "Problem Solving",
     desc: "Approaching challenges with creativity and logic to deliver effective solutions.",
   },
@@ -161,7 +161,7 @@ const expCards = [
     review:
       "Jorge’s personal projects reflect his innovative thinking and technical versatility, especially in web development.",
     imgPath: "/images/project1.png",
-    logoPath: "/images/developer.png", 
+    logoPath: "/images/developer.png",
     title: "Personal Projects Developer",
     date: "2021 - Present",
     responsibilities: [
@@ -189,21 +189,17 @@ const expCards = [
     review:
       "Jorge's project is an outstanding application of compiler engineering and AI, creating a practical tool that directly addresses developer productivity. The system's ability to analyze code, classify its paradigm, and suggest automated fixes before a commit is a significant innovation.",
     imgPath: "/images/team_overview.png",
-    logoPath: "/images/c3ai-logo.png", 
+    logoPath: "/images/c3ai-logo.png",
     title: "AI-Powered Pre-Commit Static Analyzer and Code Repair Agent",
     date: "February 2025 - June 2025",
     responsibilities: [
-      "Designed and implemented an intelligent agent, SWE-Agent Fixer, to automatically detect and remediate common coding errors in Python and Java during the Git commit process.",
-      "Engineered a custom compiler front-end to perform lexical and syntactic analysis, capable of classifying source code as Object-Oriented, Procedural, or a hybrid paradigm.",
-      "The compiler extracts Abstract Syntax Trees (ASTs) to enable deep static analysis of the code's structure, providing rich context for the AI model.",
-      "Fine-tuned a local Large Language Model (qwen-cybersecurity-2.5-7b) on a curated dataset to specialize in generating accurate, context-aware code corrections.",
-      "Developed a seamless workflow integration using a pre-commit Git hook that communicates with a local API server, automating the analysis and repair cycle without disrupting the developer.",
-      "Architected a novel hybrid agent-pipeline system that integrates a BM25 retriever to efficiently locate relevant code context, significantly enhancing the agent's accuracy.",
-      "This project was selected by C3.ai executives from over 30 competing teams for a special presentation, recognizing its technical innovation and practical impact.",
+      "Developed SWE-Agent Fixer, an AI-powered tool that automatically detects and remediates coding errors in Python and Java during Git commits.",
+      "Built a custom compiler front-end for deep static analysis, extracting ASTs to provide rich context for code correction.",
+      "Fine-tuned a local LLM and integrated a BM25 retriever to deliver highly accurate, context-aware code fixes via a seamless pre-commit workflow.",
+      "Project selected by C3.ai executives from 30+ teams for special recognition, highlighting its technical innovation and real-world impact.",
     ],
-  }
+  },
 ];
-
 
 const expLogos = [
   {

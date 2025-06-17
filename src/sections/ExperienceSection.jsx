@@ -48,7 +48,7 @@ const ExperienceSection = () => {
           start: "top 60%",
         },
       });
-    });
+    }, "<");
   }, []);
 
   return (
@@ -68,15 +68,14 @@ const ExperienceSection = () => {
                       <img src={card.imgPath} alt={card.title} />
                     </div>
                   </GlowCard>
-                </div>                
-                <div className="xl:w-4/6">
+                </div>                  <div className="xl:w-4/6">
                   <div className="flex items-start">
-                    <div className="timeline-wrapper">
-                      <div className="gradient-line" />
-                      <div className="timeline" />
+                    <div className={`timeline-wrapper timeline-wrapper-${index}`}>
+                      <div className={`gradient-line gradient-line-${index}`} />
+                      <div className={`timeline timeline-${index}`} />
                     </div>
                     <div className="expText flex xl:gap-20 md:gap-10 gap-5">
-                      <div className="timeline-logo">
+                      <div className={`timeline-logo timeline-logo-${index}`}>
                         <img src={card.logoPath} alt="logo" />
                       </div>
                       <div>
