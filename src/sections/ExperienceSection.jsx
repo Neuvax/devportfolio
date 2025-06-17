@@ -37,6 +37,18 @@ const ExperienceSection = () => {
         },
       }
     });
+    gsap.utils.toArray(".expText").forEach((text) => {
+      gsap.from(text, {
+        xPercent: 0,
+        opacity: 0,
+        duration: 1,
+        ease: "power2.inOut",
+        scrollTrigger: {
+          trigger: text,
+          start: "top 60%",
+        },
+      });
+    });
   }, []);
 
   return (
@@ -56,12 +68,12 @@ const ExperienceSection = () => {
                       <img src={card.imgPath} alt={card.title} />
                     </div>
                   </GlowCard>
-                </div>
+                </div>                
                 <div className="xl:w-4/6">
                   <div className="flex items-start">
                     <div className="timeline-wrapper">
-                      <div className="timeline" />
                       <div className="gradient-line" />
+                      <div className="timeline" />
                     </div>
                     <div className="expText flex xl:gap-20 md:gap-10 gap-5">
                       <div className="timeline-logo">
