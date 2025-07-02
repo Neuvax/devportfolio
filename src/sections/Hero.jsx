@@ -37,14 +37,16 @@ const Hero = () => {
                         key={`hero-word-${word.text}-${index}`}
                         className="flex items-center md:gap-3 gap-1 pb-2"
                       >
-                        <OptimizedImage
-                          src={word.imgPath}
-                          alt={`${word.text} icon representing creative process`}
-                          className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
-                          width={48}
-                          height={48}
-                          priority={index < 2}
-                        />
+                        <div className="xl:size-12 md:size-10 size-8 rounded-full bg-white-50 flex items-center justify-center flex-shrink-0">
+                          <OptimizedImage
+                            src={word.imgPath}
+                            alt={`${word.text} icon representing creative process`}
+                            className="xl:size-6 md:size-5 size-4 object-contain"
+                            width={24}
+                            height={24}
+                            priority={index < 2}
+                          />
+                        </div>
                         <span>{word.text}</span>
                       </span>
                     ))}

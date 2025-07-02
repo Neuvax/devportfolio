@@ -1,0 +1,11 @@
+<?xml version="1.0" encoding="UTF-8"?>
+<svg width="32" height="32" viewBox="0 0 32 32" xmlns="http://www.w3.org/2000/svg">
+  <defs>
+    <style>
+      .bg { fill: #0e0e10; }
+      .text { fill: #ffffff; font-family: 'Arial', sans-serif; font-weight: bold; font-size: 18px; }
+    </style>
+  </defs>
+  <rect width="32" height="32" rx="6" class="bg"/>
+  <text x="16" y="22" text-anchor="middle" class="text">JW</text>
+</svg>
