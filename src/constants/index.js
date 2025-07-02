@@ -246,10 +246,10 @@ const testimonials = [
     imgPath: "/images/client5.png",
   },
   {
-    name: "Floyd Miles",
-    mentions: "@floydmiles",
+    name: "Ana Biebrich",
+    mentions: "@anabiebrich_art",
     review:
-      "Adrian’s expertise in web development is truly impressive. He delivered a robust and scalable solution for our e-commerce site, and our online sales have significantly increased since the launch. He’s a true professional!",
+      "Jorge is amazing, everything from helping me land on what I wanted and taking me step by step in the process. He was able to understand what I needed and take it to the next level. His skills are unmatched and I strongly recommend him.",
     imgPath: "/images/client4.png",
   },
   {
