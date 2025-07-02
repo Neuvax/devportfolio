@@ -100,29 +100,6 @@ const abilities = [
   },
 ];
 
-const techStackImgs = [
-  {
-    name: "React Developer",
-    imgPath: "/images/logos/react.png",
-  },
-  {
-    name: "Python Developer",
-    imgPath: "/images/logos/python.svg",
-  },
-  {
-    name: "Backend Developer",
-    imgPath: "/images/logos/node.png",
-  },
-  {
-    name: "Interactive Developer",
-    imgPath: "/images/logos/three.png",
-  },
-  {
-    name: "Project Manager",
-    imgPath: "/images/logos/git.svg",
-  },
-];
-
 const techStackIcons = [
   {
     name: "React Developer",
@@ -201,21 +178,6 @@ const expCards = [
   },
 ];
 
-const expLogos = [
-  {
-    name: "logo1",
-    imgPath: "/images/logo1.png",
-  },
-  {
-    name: "logo2",
-    imgPath: "/images/logo2.png",
-  },
-  {
-    name: "logo3",
-    imgPath: "/images/logo3.png",
-  },
-];
-
 const testimonials = [
   {
     name: "Esther Howard",
@@ -267,9 +229,7 @@ export {
   logoIconsList,
   counterItems,
   expCards,
-  expLogos,
   testimonials,
   techStackIcons,
-  techStackImgs,
   navLinks,
 };
