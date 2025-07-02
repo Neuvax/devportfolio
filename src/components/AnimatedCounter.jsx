@@ -1,11 +1,36 @@
-import React from "react";
+import React, { useState, useRef, useEffect } from "react";
 import { counterItems } from "../constants/index.js";
 import CountUp from "react-countup";
 import { Meteors } from "./ui/meteors.jsx";
 
 const AnimatedCounter = () => {
+  const [startAnimation, setStartAnimation] = useState(false);
+  const counterRef = useRef(null);
+
+  useEffect(() => {
+    const observer = new IntersectionObserver(
+      ([entry]) => {
+        if (entry.isIntersecting) {
+          setStartAnimation(true);
+          // Once animation starts, we can disconnect the observer
+          observer.disconnect();
+        }
+      },
+      {
+        threshold: 0.3, // Trigger when 30% of the element is visible
+        rootMargin: "0px 0px -50px 0px", // Trigger a bit before it's fully visible
+      }
+    );
+
+    if (counterRef.current) {
+      observer.observe(counterRef.current);
+    }
+
+    return () => observer.disconnect();
+  }, []);
   return (
     <section
+      ref={counterRef}
       id="counter"
       className="padding-x-lg xl:mt-0 mt-32"
       aria-labelledby="stats-title"
@@ -26,12 +51,17 @@ const AnimatedCounter = () => {
               className="counter-number text-white text-5xl font-bold mb-2 relative z-20"
               aria-hidden="true"
             >
-              <CountUp
-                suffix={item.suffix}
-                end={item.value}
-                duration={4}
-                aria-label={`${item.value}${item.suffix}`}
-              />
+              {startAnimation ? (
+                <CountUp
+                  suffix={item.suffix}
+                  end={item.value}
+                  duration={2.5}
+                  delay={index * 0.2}
+                  aria-label={`${item.value}${item.suffix}`}
+                />
+              ) : (
+                <span>0{item.suffix}</span>
+              )}
             </div>
 
             <div
