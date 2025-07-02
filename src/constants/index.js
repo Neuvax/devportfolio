@@ -180,18 +180,11 @@ const expCards = [
 
 const testimonials = [
   {
-    name: "Esther Howard",
-    mentions: "@estherhoward",
-    review:
-      "I can’t say enough good things about Adrian. He was able to take our complex project requirements and turn them into a seamless, functional website. His problem-solving abilities are outstanding.",
-    imgPath: "/images/client1.png",
-  },
-  {
     name: "Wade Warren",
     mentions: "@wadewarren",
     review:
       "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
-    imgPath: "/images/client3.png",
+    imgPath: "/images/client1.png",
   },
   {
     name: "Guy Hawkins",
@@ -199,6 +192,13 @@ const testimonials = [
     review:
       "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
     imgPath: "/images/client2.png",
+  },
+  {
+    name: "Armando Terrazas",
+    mentions: "@armando-terrazas-gomez",
+    review:
+      "I had the pleasure of working closely with Jorge on our Flutter application, where he was responsible for integrating authentication and OAuth services using Firebase. He did an outstanding job implementing Google sign-in, email/password authentication, and multi-factor authentication, including secure SMS verification. Thanks to his expertise, our app now runs smoothly and securely, meeting all necessary security standards. His contributions were crucial to the success of our project.",
+    imgPath: "/images/client3.png",
   },
   {
     name: "Marvin McKinney",
