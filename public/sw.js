@@ -5,8 +5,11 @@ const urlsToCache = [
   "/src/index.css",
   "/images/bg.png",
   "/images/developer.png",
-  "/images/fav.png",
-  "/manifest.json",
+  "/site.webmanifest",
+  "/favicon.ico",
+  "/favicon-16x16.png",
+  "/favicon-32x32.png",
+  "/apple-touch-icon.png",
 ];
 
 // Install event
