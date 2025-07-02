@@ -12,7 +12,6 @@ A modern, responsive developer portfolio website to showcase your skills, projec
 - **Skills Section**: Visual representation of your technical skills and proficiency levels
 - **Experience Timeline**: Chronological display of your educational and professional journey
 - **Contact Form**: Allow potential clients and employers to reach out easily
-- **Dark/Light Mode**: Toggle between dark and light themes for better user experience
 - **SEO Optimized**: Built with search engine visibility in mind
 
 ## 🚀 Technologies Used
