@@ -81,12 +81,13 @@ const HeroExperience = () => {
         <OrbitControls
           enablePan={false}
           enableZoom={false}
+          enableRotate={!isMobile} // Desactivar rotación manual en móviles para mejor UX
           maxDistance={20}
           minDistance={5}
           minPolarAngle={Math.PI / 5}
           maxPolarAngle={Math.PI / 2}
-          // Reduce la velocidad de rotación en dispositivos móviles
-          rotateSpeed={isMobile ? 0.3 : 1}
+          // Velocidad de rotación: 0 en móviles (desactivada), normal en desktop
+          rotateSpeed={isMobile ? 0 : 1}
           // Solo actualiza cuando se mueve en modo de bajo rendimiento
           enableDamping={!config.lowQuality}
         />

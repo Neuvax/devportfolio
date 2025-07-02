@@ -245,19 +245,19 @@ const ContactExperience = () => {
             <FloatingParticles optimized={config.lowQuality} />
           )}
 
-          {/* Controls con rotación más suave */}
+          {/* Controls - Sin rotación en móviles para mejor experiencia de usuario */}
           <OrbitControls
             enableZoom={false}
             enablePan={false}
-            enableRotate={true}
-            autoRotate={true}
+            enableRotate={!isMobile} // Desactivar rotación manual en móviles
+            autoRotate={!isMobile} // Desactivar auto-rotación en móviles
             autoRotateSpeed={config.lowQuality ? 0.1 : 0.3}
             minDistance={3}
             maxDistance={10}
             minPolarAngle={Math.PI / 5}
             maxPolarAngle={Math.PI / 2}
-            // Reduce la velocidad de rotación en dispositivos móviles
-            rotateSpeed={isMobile ? 0.3 : 1}
+            // Velocidad de rotación: 0 en móviles, normal en desktop
+            rotateSpeed={isMobile ? 0 : 1}
             // Solo actualiza cuando se mueve en modo de bajo rendimiento
             enableDamping={!config.lowQuality}
           />
