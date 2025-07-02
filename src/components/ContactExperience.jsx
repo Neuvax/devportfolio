@@ -19,7 +19,7 @@ import {
 useGLTF.preload("/models/computer-optimized.glb");
 
 // Componente para luces animadas
-const AnimatedLights = ({ optimized = false }) => {
+const AnimatedLights = ({ optimized = false, isMobile = false }) => {
   const pointLight1 = useRef();
   const pointLight2 = useRef();
   const spotLight = useRef();
@@ -49,17 +49,22 @@ const AnimatedLights = ({ optimized = false }) => {
     }
   });
 
+  // Intensidades ajustadas para móviles
+  const ambientIntensity = optimized ? 0.5 : isMobile ? 0.4 : 0.3;
+  const directionalIntensity1 = optimized ? 1.5 : isMobile ? 1.8 : 2;
+  const directionalIntensity2 = optimized ? 1.2 : isMobile ? 1.5 : 1.8;
+
   return (
     <>
-      <ambientLight intensity={optimized ? 0.5 : 0.3} color="#e6f3ff" />
+      <ambientLight intensity={ambientIntensity} color="#e6f3ff" />
       <directionalLight
-        position={[5, 5, 3]}
-        intensity={optimized ? 1.5 : 2}
+        position={isMobile ? [3, 4, 2] : [5, 5, 3]} // Posición más cercana en móviles
+        intensity={directionalIntensity1}
         color="#8b5cf6"
       />
       <directionalLight
-        position={[5, 9, 1]}
-        intensity={optimized ? 1.2 : 1.8}
+        position={isMobile ? [3, 6, 1] : [5, 9, 1]} // Posición más cercana en móviles
+        intensity={directionalIntensity2}
         color="#3b82f6"
         castShadow={!optimized}
       />
@@ -67,29 +72,41 @@ const AnimatedLights = ({ optimized = false }) => {
         <>
           <pointLight
             ref={pointLight1}
-            position={[-5, 2, -5]}
-            intensity={0.8}
+            position={isMobile ? [-3, 1, -3] : [-5, 2, -5]} // Más cerca en móviles
+            intensity={isMobile ? 0.6 : 0.8}
             color="#a855f7"
           />
           <pointLight
             ref={pointLight2}
-            position={[5, -2, 5]}
-            intensity={0.6}
+            position={isMobile ? [3, -1, 3] : [5, -2, 5]} // Más cerca en móviles
+            intensity={isMobile ? 0.4 : 0.6}
             color="#3b82f6"
           />
           <spotLight
             ref={spotLight}
-            position={[0, 10, 0]}
+            position={isMobile ? [0, 6, 0] : [0, 10, 0]} // Más bajo en móviles
             angle={0.3}
             penumbra={1}
-            intensity={1}
+            intensity={isMobile ? 0.8 : 1}
             color="#6366f1"
             castShadow
           />
 
-          {/* Luces adicionales para más vida */}
-          <pointLight position={[0, 5, 8]} intensity={0.3} color="#ec4899" />
-          <pointLight position={[-8, 3, 0]} intensity={0.4} color="#06b6d4" />
+          {/* Luces adicionales para más vida - Reducidas en móviles */}
+          {!isMobile && (
+            <>
+              <pointLight
+                position={[0, 5, 8]}
+                intensity={0.3}
+                color="#ec4899"
+              />
+              <pointLight
+                position={[-8, 3, 0]}
+                intensity={0.4}
+                color="#06b6d4"
+              />
+            </>
+          )}
         </>
       )}
     </>
@@ -185,7 +202,7 @@ const ContactExperience = () => {
     (performanceLevel === "low" && isMobile)
   ) {
     return (
-      <div className="w-full h-full min-h-[700px] rounded-xl overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center relative">
+      <div className="w-full h-full min-h-[700px] md:min-h-[700px] sm:min-h-[400px] rounded-xl overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900 flex items-center justify-center relative">
         <img
           src="/images/bg.png"
           alt="3D Model Preview"
@@ -199,12 +216,12 @@ const ContactExperience = () => {
   }
 
   return (
-    <div className="w-full h-full min-h-[700px] rounded-xl overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
+    <div className="w-full h-full min-h-[700px] md:min-h-[700px] sm:min-h-[500px] rounded-xl overflow-hidden bg-gradient-to-br from-slate-900 via-purple-900 to-slate-900">
       <Canvas
         shadows={!config.lowQuality}
         camera={{
-          position: [0, 3, 7],
-          fov: 45,
+          position: isMobile ? [0, 2, 5] : [0, 3, 7], // Cámara más cerca en móviles
+          fov: isMobile ? 50 : 45, // Campo de visión más amplio en móviles
         }}
         dpr={[config.dpr, config.dpr * 1.5]} // Ajustar resolución según configuración
         frameloop={config.frameOnDemand ? "demand" : "always"} // Solo renderiza cuando es necesario si está configurado
@@ -224,12 +241,12 @@ const ContactExperience = () => {
         }}
       >
         <Suspense fallback={null}>
-          {/* Estrellas de fondo para ambiente misterioso - solo si no está optimizado */}
+          {/* Estrellas de fondo para ambiente misterioso - Ajustadas para móviles */}
           {!config.skipEffects && (
             <Stars
-              radius={100}
-              depth={50}
-              count={config.lowQuality ? 200 : 800}
+              radius={isMobile ? 50 : 100} // Radio más pequeño en móviles
+              depth={isMobile ? 25 : 50} // Profundidad más pequeña en móviles
+              count={config.lowQuality ? 200 : isMobile ? 400 : 800} // Menos estrellas en móviles
               factor={4}
               saturation={0}
               fade
@@ -238,7 +255,7 @@ const ContactExperience = () => {
           )}
 
           {/* Luces animadas */}
-          <AnimatedLights optimized={config.reduceLights} />
+          <AnimatedLights optimized={config.reduceLights} isMobile={isMobile} />
 
           {/* Partículas flotantes - solo si no está optimizado */}
           {!config.skipEffects && (
@@ -252,9 +269,9 @@ const ContactExperience = () => {
             enableRotate={!isMobile} // Desactivar rotación manual en móviles
             autoRotate={!isMobile} // Desactivar auto-rotación en móviles
             autoRotateSpeed={config.lowQuality ? 0.1 : 0.3}
-            minDistance={3}
-            maxDistance={10}
-            minPolarAngle={Math.PI / 5}
+            minDistance={isMobile ? 2 : 3} // Distancia mínima más cercana en móviles
+            maxDistance={isMobile ? 6 : 10} // Distancia máxima más cercana en móviles
+            minPolarAngle={Math.PI / 6} // Ángulo más permisivo en móviles
             maxPolarAngle={Math.PI / 2}
             // Velocidad de rotación: 0 en móviles, normal en desktop
             rotateSpeed={isMobile ? 0 : 1}
@@ -262,31 +279,39 @@ const ContactExperience = () => {
             enableDamping={!config.lowQuality}
           />
 
-          {/* Computadora con animación flotante condicional */}
+          {/* Computadora con animación flotante condicional - Responsive */}
           {config.lowQuality ? (
             <group
-              scale={0.025}
-              position={[0, -1.5, -2]}
+              scale={isMobile ? 0.02 : 0.025} // Escala más pequeña en móviles
+              position={isMobile ? [0, -1, -1] : [0, -1.5, -2]} // Posición ajustada para móviles
               castShadow={!config.lowQuality}
             >
               <Computer />
             </group>
           ) : (
-            <Float speed={1.2} rotationIntensity={0.1} floatIntensity={0.15}>
-              <group scale={0.025} position={[0, -1.5, -2]} castShadow>
+            <Float
+              speed={isMobile ? 0.8 : 1.2}
+              rotationIntensity={isMobile ? 0.05 : 0.1}
+              floatIntensity={isMobile ? 0.1 : 0.15}
+            >
+              <group
+                scale={isMobile ? 0.02 : 0.025} // Escala más pequeña en móviles
+                position={isMobile ? [0, -1, -1] : [0, -1.5, -2]} // Posición ajustada para móviles
+                castShadow
+              >
                 <Computer />
               </group>
             </Float>
           )}
 
-          {/* Plano como estaba antes */}
+          {/* Plano del suelo - Responsive */}
           <group scale={[1, 1, 1]}>
             <mesh
               receiveShadow={!config.lowQuality}
               position={[0, -1.5, 0]}
               rotation={[-Math.PI / 2, 0, 0]}
             >
-              <planeGeometry args={[30, 30]} />
+              <planeGeometry args={isMobile ? [20, 20] : [30, 30]} />
               <meshStandardMaterial color="#1e1b4c" />
             </mesh>
           </group>
