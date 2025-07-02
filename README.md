@@ -4,7 +4,6 @@
 
 A modern, responsive developer portfolio website to showcase your skills, projects, and professional experience.
 
-![DevPortfolio Preview](assets/images/preview.png)
 
 ## 📋 Features
 
@@ -18,7 +17,7 @@ A modern, responsive developer portfolio website to showcase your skills, projec
 
 ## 🚀 Technologies Used
 
-- HTML5, CSS3, JavaScript
+- React.js, Three.js, Gsap
 - [Bootstrap](https://getbootstrap.com/) for responsive layout
 - [Font Awesome](https://fontawesome.com/) for icons
 - [AOS](https://michalsnik.github.io/aos/) for scroll animations
@@ -31,10 +30,6 @@ A modern, responsive developer portfolio website to showcase your skills, projec
    git clone https://github.com/Neuvax/devportfolio.git
    cd devportfolio
    ```
-
-2. **Open with a live server**
-   - If you have VS Code, you can use the [Live Server extension](https://marketplace.visualstudio.com/items?itemName=ritwickdey.LiveServer)
-   - Alternatively, you can use any local development server of your choice
 
 ## 🔧 Configuration
 
@@ -85,28 +80,9 @@ A modern, responsive developer portfolio website to showcase your skills, projec
 </div>
 ```
 
-## 🤝 Contributing
-
-Contributions, issues, and feature requests are welcome! Feel free to check the [issues page](https://github.com/Neuvax/devportfolio/issues).
-
-1. Fork the project
-2. Create your feature branch (`git checkout -b feature/amazing-feature`)
-3. Commit your changes (`git commit -m 'Add some amazing feature'`)
-4. Push to the branch (`git push origin feature/amazing-feature`)
-5. Open a Pull Request
-
 ## 📝 License
 
 This project is licensed under the MIT License - see the [LICENSE](LICENSE) file for details.
-
-## 📬 Contact
-
-If you have any questions or feedback, please reach out:
-
-- GitHub: [@Neuvax](https://github.com/Neuvax)
-- LinkedIn: [Your LinkedIn Profile](https://linkedin.com/in/yourprofile)
-- Email: your.email@example.com
-- Website: [your-website.com](https://your-website.com)
 
 ---
 
