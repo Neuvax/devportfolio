@@ -2,6 +2,7 @@ import React from "react";
 import TitleHeader from "../components/TitleHeader";
 import { expCards } from "../constants";
 import GlowCard from "../components/GlowCard";
+import OptimizedImage from "../components/OptimizedImage";
 import gsap from "gsap";
 import { useGSAP } from "@gsap/react";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
@@ -55,17 +56,24 @@ const ExperienceSection = () => {
     <section
       id="experience"
       className="w-full md:mt-40 mt-20 section-padding xl:px-0"
+      aria-labelledby="experience-title"
     >
       <div className="w-full h-full md:px-20 px-5">
         <TitleHeader title="Work Experience" sub="My Career Overview" />
         <div className="mt-32 relative">
           <div className="relative z-50 xl:space-y-32 space-y-10">
             {expCards.map((card, index) => (
-              <div key={card.title} className="exp-card-wrapper">
+              <article key={`experience-${index}`} className="exp-card-wrapper">
                 <div className="xl:w-2/6">
                   <GlowCard card={card} index={index}>
                     <div>
-                      <img src={card.imgPath} alt={card.title} />
+                      <OptimizedImage
+                        src={card.imgPath}
+                        alt={`Project image for ${card.title}`}
+                        className="w-full h-full object-cover rounded-lg"
+                        width={400}
+                        height={250}
+                      />
                     </div>
                   </GlowCard>
                 </div>
@@ -76,16 +84,30 @@ const ExperienceSection = () => {
                       <div className="gradient-line w-1 h-full" />
                     </div>
                     <div className="expText flex xl:gap-20 md:gap-10 gap-5 relative z-20">
-                      <div className="timeline-logo">
-                        <img src={card.logoPath} alt="logo" />
+                      <div className="timeline-logo" aria-hidden="true">
+                        <OptimizedImage
+                          src={card.logoPath}
+                          alt={`Company logo for ${card.title}`}
+                          className="w-full h-full object-contain"
+                          width={60}
+                          height={60}
+                        />
                       </div>
                       <div>
-                        <h1 className="font-semibold text-3xl">{card.title}</h1>
-                        <p className="my-5 text-white-50">📅{card.date}</p>
+                        <h2 className="font-semibold text-3xl">{card.title}</h2>
+                        <p
+                          className="my-5 text-white-50"
+                          aria-label={`Employment period: ${card.date}`}
+                        >
+                          📅{card.date}
+                        </p>
                         <p className="text-[#839cb5] italic">Highlights</p>
                         <ul className="list-disc ms-5 mt-5 flex flex-col gap-5 text-white-50">
                           {card.responsibilities.map((responsibility, i) => (
-                            <li key={i} className="text-lg">
+                            <li
+                              key={`responsibility-${index}-${i}`}
+                              className="text-lg"
+                            >
                               {responsibility}
                             </li>
                           ))}
@@ -94,7 +116,7 @@ const ExperienceSection = () => {
                     </div>
                   </div>
                 </div>
-              </div>
+              </article>
             ))}
           </div>
         </div>

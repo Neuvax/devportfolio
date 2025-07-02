@@ -3,6 +3,7 @@ import { words } from "../constants";
 import { ColourfulText } from "../components/ui/colorful-text";
 import Button from "../components/Button";
 import HeroExperience from "./../components/HeroModels/HeroExperience";
+import OptimizedImage from "../components/OptimizedImage";
 import { useGSAP } from "@gsap/react";
 import gsap from "gsap";
 import AnimatedCounter from "../components/AnimatedCounter";
@@ -15,26 +16,34 @@ const Hero = () => {
       { y: 0, opacity: 1, stagger: 0.2, duration: 1, ease: "power2.inOut" }
     );
   });
+
   return (
-    <section id="hero" className="relative overflow-hidden">
+    <section
+      id="hero"
+      className="relative overflow-hidden"
+      aria-labelledby="hero-title"
+    >
       <div className="hero-layout">
         {/*LEFT: HERO TEXT*/}
         <header className="flex flex-col justify-center md:w-full w-screen md:px-20 px-5">
           <div className="flex flex-col gap-7">
             <div className="hero-text">
-              <h1>
+              <h1 id="hero-title">
                 Turning
                 <span className="slide">
                   <span className="wrapper">
                     {words.map((word, index) => (
                       <span
-                        key={`${word.text}-${index}`}
+                        key={`hero-word-${word.text}-${index}`}
                         className="flex items-center md:gap-3 gap-1 pb-2"
                       >
-                        <img
+                        <OptimizedImage
                           src={word.imgPath}
-                          alt={word.text}
+                          alt={`${word.text} icon representing creative process`}
                           className="xl:size-12 md:size-10 size-7 md:p-2 p-1 rounded-full bg-white-50"
+                          width={48}
+                          height={48}
+                          priority={index < 2}
                         />
                         <span>{word.text}</span>
                       </span>
@@ -55,11 +64,12 @@ const Hero = () => {
               className="md:w-80 md:h-16 w-60 h-12"
               id="button"
               text="See my Work"
+              aria-label="View Jorge's portfolio and projects"
             />
           </div>
         </header>
         {/*RIGHT: 3D MODEL*/}
-        <figure>
+        <figure aria-label="Interactive 3D model showcasing development environment">
           <div className="hero-3d-layout">
             <HeroExperience />
           </div>

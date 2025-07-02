@@ -18,24 +18,35 @@ const Navbar = () => {
   }, [scrolled]);
 
   return (
-    <header className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}>
+    <header
+      className={`navbar ${scrolled ? "scrolled" : "not-scrolled"}`}
+      role="banner"
+    >
       <div className="inner">
-        <a className="logo" href="#hero">
+        <a
+          className="logo"
+          href="#hero"
+          aria-label="Jorge Wolburg - Portfolio Homepage"
+        >
           Jorge Wolburg
         </a>
-        <nav className="desktop">
-          <ul>
+        <nav className="desktop" role="navigation" aria-label="Main navigation">
+          <ul role="list">
             {navLinks.map(({ link, name }) => (
-              <li key={name} className="group">
-                <a href={link}>
+              <li key={name} className="group" role="listitem">
+                <a href={link} aria-label={`Navigate to ${name} section`}>
                   <span>{name}</span>
-                  <span className="underline"></span>
+                  <span className="underline" aria-hidden="true"></span>
                 </a>
               </li>
             ))}
           </ul>
         </nav>
-        <a className="contact-btn group" href="#contact">
+        <a
+          className="contact-btn group"
+          href="#contact"
+          aria-label="Get in touch - Contact Jorge Wolburg"
+        >
           <div className="inner">
             <span>Get in Touch</span>
           </div>

@@ -1,0 +1,27 @@
+User-agent: *
+Allow: /
+
+# Sitemap
+Sitemap: https://jorgewolburg.dev/sitemap.xml
+
+# Crawl delay
+Crawl-delay: 1
+
+# Specific instructions for common crawlers
+User-agent: Googlebot
+Allow: /
+
+User-agent: Bingbot
+Allow: /
+
+User-agent: Slurp
+Allow: /
+
+# Block access to unnecessary files
+Disallow: /src/
+Disallow: /.git/
+Disallow: /node_modules/
+Disallow: /*.log
+Disallow: /*.json
+Disallow: /vite.config.js
+Disallow: /package*.json

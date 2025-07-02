@@ -9,22 +9,32 @@ import TechStack from "./sections/TechStack";
 import Testimonials from "./sections/Testimonials";
 import Contact from "./sections/Contact";
 import Footer from "./sections/Footer";
+import SkipLink from "./components/SkipLink";
+import SEOHead from "./components/SEOHead";
 
 const App = () => {
   return (
     <>
-      <Navbar />
-      <Hero />
-      <Showcase />
-      {/*WIP*/}
-      <LogoSection />
-      <FeatureCards />
-      <ExperienceSection />
-      <TechStack />
-      {/*WIP*/}
-      <Testimonials />
-      <Contact />
-      <Footer />
+      <SEOHead />
+      <SkipLink />
+
+      {/* Page structure with proper landmarks */}
+      <div className="min-h-screen bg-black text-white">
+        <Navbar />
+
+        <main id="main-content" role="main">
+          <Hero />
+          <Showcase />
+          <LogoSection />
+          <FeatureCards />
+          <ExperienceSection />
+          <TechStack />
+          <Testimonials />
+          <Contact />
+        </main>
+
+        <Footer />
+      </div>
     </>
   );
 };

@@ -2,9 +2,75 @@
 <html lang="en">
   <head>
     <meta charset="UTF-8" />
-    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    
+    <!-- Critical Resource Hints -->
+    <link rel="preconnect" href="https://fonts.googleapis.com" />
+    <link rel="preconnect" href="https://fonts.gstatic.com" crossorigin />
+    
+    <!-- Preload Critical Resources -->
+    <link rel="preload" href="/images/bg.png" as="image" type="image/png" />
+    <link rel="preload" href="/images/developer.png" as="image" type="image/png" />
+    <link rel="preload" href="/src/index.css" as="style" />
+    
+    <!-- Meta Tags -->
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
-    <title>DevPortfolio</title>
+    <meta name="description" content="Jorge Wolburg is a skilled Full Stack Developer from Mexico specializing in React, Python, and AI technologies. View my portfolio showcasing innovative web applications and interactive experiences." />
+    <meta name="keywords" content="Jorge Wolburg, Full Stack Developer, React Developer, Python Developer, Web Development, Portfolio, AI, Three.js, GSAP, Mexico, Frontend, Backend, JavaScript, Node.js" />
+    <meta name="author" content="Jorge Wolburg" />
+    <meta name="robots" content="index, follow, max-image-preview:large, max-snippet:-1, max-video-preview:-1" />
+    <meta name="googlebot" content="index, follow" />
+    <meta name="language" content="English" />
+    <meta name="geo.region" content="MX" />
+    <meta name="geo.country" content="Mexico" />
+    <meta name="format-detection" content="telephone=no" />
+    
+    <!-- Title -->
+    <title>Jorge Wolburg - Full Stack Developer | React, Python & AI Specialist</title>
+    
+    <!-- Favicon and Icons -->
+    <link rel="icon" type="image/svg+xml" href="/vite.svg" />
+    <link rel="apple-touch-icon" sizes="180x180" href="/images/fav.png" />
+    <link rel="icon" type="image/png" sizes="32x32" href="/images/fav.png" />
+    <link rel="icon" type="image/png" sizes="16x16" href="/images/fav.png" />
+    <link rel="manifest" href="/site.webmanifest" />
+    
+    <!-- Theme and Display -->
+    <meta name="theme-color" content="#0e0e10" />
+    <meta name="msapplication-TileColor" content="#0e0e10" />
+    <meta name="color-scheme" content="dark" />
+    
+    <!-- Open Graph Meta Tags -->
+    <meta property="og:title" content="Jorge Wolburg - Full Stack Developer Portfolio" />
+    <meta property="og:description" content="Innovative Full Stack Developer crafting digital experiences with React, Python, and AI technologies." />
+    <meta property="og:type" content="website" />
+    <meta property="og:url" content="https://jorgewolburg.dev" />
+    <meta property="og:image" content="https://jorgewolburg.dev/images/og-image.png" />
+    <meta property="og:image:width" content="1200" />
+    <meta property="og:image:height" content="630" />
+    <meta property="og:image:alt" content="Jorge Wolburg - Full Stack Developer Portfolio" />
+    <meta property="og:site_name" content="Jorge Wolburg Portfolio" />
+    <meta property="og:locale" content="en_US" />
+    
+    <!-- Twitter Meta Tags -->
+    <meta name="twitter:card" content="summary_large_image" />
+    <meta name="twitter:title" content="Jorge Wolburg - Full Stack Developer" />
+    <meta name="twitter:description" content="Innovative Full Stack Developer crafting digital experiences with React, Python, and AI technologies." />
+    <meta name="twitter:image" content="https://jorgewolburg.dev/images/og-image.png" />
+    <meta name="twitter:image:alt" content="Jorge Wolburg - Full Stack Developer Portfolio" />
+    <meta name="twitter:creator" content="@jorge_wol" />
+    <meta name="twitter:site" content="@jorge_wol" />
+    
+    <!-- Canonical URL -->
+    <link rel="canonical" href="https://jorgewolburg.dev" />
+    
+    <!-- Security -->
+    <meta http-equiv="X-Content-Type-Options" content="nosniff" />
+    <meta http-equiv="X-Frame-Options" content="DENY" />
+    <meta http-equiv="X-XSS-Protection" content="1; mode=block" />
+    
+    <!-- Performance -->
+    <meta http-equiv="Content-Type" content="text/html; charset=utf-8" />
+    <meta name="referrer" content="strict-origin-when-cross-origin" />
   </head>
   <body>
     <div id="root"></div>

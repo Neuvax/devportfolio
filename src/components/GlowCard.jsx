@@ -22,16 +22,41 @@ const GlowCard = ({ card, children, index }) => {
       ref={(el) => (cardRefs.current[index] = el)}
       onMouseMove={handleMouseMovement(index)}
       className="card card-border timeline-card rounded-xl p-10 mb-5 break-inside-avoid-column relative overflow-hidden flex flex-col items-center justify-center text-center"
+      role="article"
+      aria-label={`${card.review ? "Testimonial" : "Experience"} card`}
     >
-      <div className="glow" />
-      <div className="flex items-center gap-1 mb-5">
-        {Array.from({ length: 5 }, (_, i) => (
-          <img src="/images/star.png" key={i} alt="star" className="size-5" />
-        ))}
-      </div>
+      <div className="glow" aria-hidden="true" />
+
+      {/* Star rating display */}
+      {card.review && (
+        <div
+          className="flex items-center gap-1 mb-5"
+          role="img"
+          aria-label="5 star rating"
+        >
+          {Array.from({ length: 5 }, (_, i) => (
+            <img
+              src="/images/star.png"
+              key={i}
+              alt=""
+              className="size-5"
+              role="presentation"
+              width="20"
+              height="20"
+            />
+          ))}
+        </div>
+      )}
+
+      {/* Card content */}
       <div className="mb-5">
-        <p className="text-white-50 text-lg">{card.review}</p>
+        {card.review && (
+          <blockquote className="text-white-50 text-lg">
+            "{card.review}"
+          </blockquote>
+        )}
       </div>
+
       {children}
     </div>
   );

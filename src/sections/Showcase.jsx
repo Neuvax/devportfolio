@@ -2,6 +2,7 @@ import React, { useRef } from "react";
 import { gsap } from "gsap";
 import { ScrollTrigger } from "gsap/ScrollTrigger";
 import { useGSAP } from "@gsap/react";
+import OptimizedImage from "../components/OptimizedImage";
 
 gsap.registerPlugin(ScrollTrigger);
 
@@ -46,13 +47,28 @@ const Showcase = () => {
   }, []);
 
   return (
-    <section id="work" ref={sectionRef} className="app-showcase">
+    <section
+      id="work"
+      ref={sectionRef}
+      className="app-showcase"
+      aria-labelledby="work-title"
+    >
       <div className="w-full">
+        <header className="sr-only">
+          <h2 id="work-title">Featured Projects Portfolio</h2>
+        </header>
         <div className="showcaselayout">
           {/*LEFT*/}
           <div className="first-project-wrapper" ref={project1Ref}>
             <div className="image-wrapper">
-              <img src="/images/project1.png" alt="Iphone15" />
+              <OptimizedImage
+                src="/images/project1.png"
+                alt="Screenshot of iPhone 15 landing page clone showing interactive 3D model and modern design"
+                className="w-full h-full object-cover rounded-xl absolute inset-0"
+                width={800}
+                height={600}
+                priority={true}
+              />
             </div>
             <div className="text-content">
               <h2>
@@ -72,7 +88,13 @@ const Showcase = () => {
           <div className="project-list-wrapper overflow-hidden">
             <div className="project" ref={project2Ref}>
               <div className="image-wrapper bg-[#f95c4f]">
-                <img src="/images/project2.png" alt="Oracle Java Bot" />
+                <OptimizedImage
+                  src="/images/project2.png"
+                  alt="Oracle Java Bot interface showing task management features for developers on Telegram"
+                  className="w-full h-full object-contain rounded-xl"
+                  width={400}
+                  height={300}
+                />
               </div>
               <h2>
                 Oracle Java Bot: Simple Task Management for Developers and Teams
@@ -81,7 +103,13 @@ const Showcase = () => {
             </div>
             <div className="project" ref={project3Ref}>
               <div className="image-wrapper bg-[#36035a]">
-                <img src="/images/project3.png" alt="BAMX App" />
+                <OptimizedImage
+                  src="/images/project3.png"
+                  alt="BAMX mobile app interface showing donation features for the Food Bank of Mexico"
+                  className="w-full h-full object-contain rounded-xl"
+                  width={400}
+                  height={300}
+                />
               </div>
               <h2>BAMX Donations: Mobile App for the Food Bank of Mexico</h2>
             </div>
