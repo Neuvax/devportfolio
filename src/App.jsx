@@ -18,7 +18,6 @@ const App = () => {
       <SEOHead />
       <SkipLink />
 
-      {/* Page structure with proper landmarks */}
       <div className="min-h-screen bg-black text-white">
         <Navbar />
 

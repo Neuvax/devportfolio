@@ -224,7 +224,7 @@ const testimonials = [
     mentions: "@paulo-dominguez",
     socialLink: "https://www.linkedin.com/in/paulo-dominguez-500481237",
     review:
-      "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
+      "Our AI project had a lot of moving parts—everything from custom model training to integrating third-party APIs and managing noisy datasets. Jorge approached each challenge with confidence and clarity. His attention to both detail and big-picture outcomes helped us deliver a system that was not just technically sound but commercially viable.",
     imgPath: "/images/client6.png",
   },
 ];
