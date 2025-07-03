@@ -182,6 +182,7 @@ const testimonials = [
   {
     name: "Santiago Gonzalez de Cosio",
     mentions: "@santi_gdc",
+    socialLink: "https://instagram.com/santi_gdc",
     review:
       "Jorge was a reliable, proactive, and collaborative team member who consistently delivered quality work and helped drive the project forward. He showed great skills of adaptability and was always prepared to guide the team to involve new technologies which benefitted the project",
     imgPath: "/images/client1.png",
@@ -189,6 +190,7 @@ const testimonials = [
   {
     name: "Jorge Madrigal",
     mentions: "@madrigal-jer",
+    socialLink: "https://linkedin.com/in/madrigal-jer",
     review:
       "Jorge is one of the most intelligent people I have worked with. He has outstanding problem-solving skills and an incredible ability to manage both situations and emotions. Technically, I can confidently say that he is a great full-stack developer, especially on the backend. His 'Airbnb Clone' project is the one that impressed me the most.",
     imgPath: "/images/client2.png",
@@ -196,6 +198,7 @@ const testimonials = [
   {
     name: "Armando Terrazas",
     mentions: "@armando-terrazas-gomez",
+    socialLink: "https://linkedin.com/in/armando-terrazas-gomez",
     review:
       "I had the pleasure of working closely with Jorge on our Flutter application, where he was responsible for integrating authentication and OAuth services using Firebase. He did an outstanding job implementing Google sign-in, email/password authentication, and multi-factor authentication, including secure SMS verification. Thanks to his expertise, our app now runs smoothly and securely, meeting all necessary security standards. His contributions were crucial to the success of our project.",
     imgPath: "/images/client3.png",
@@ -203,6 +206,7 @@ const testimonials = [
   {
     name: "Ingrid Gonzalez",
     mentions: "@ingrid-gonzalez",
+    socialLink: "https://www.linkedin.com/in/ingrid-gonzález",
     review:
       "Jorge was an excellent collaborator during our Software Engineering degree. He was always clear when explaining, solved complex problems with ease, and was always willing to help. It was truly a pleasure to work with him.",
     imgPath: "/images/client5.png",
@@ -210,13 +214,15 @@ const testimonials = [
   {
     name: "Ana Biebrich",
     mentions: "@anabiebrich_art",
+    socialLink: "https://instagram.com/anabiebrich_art",
     review:
       "Jorge is amazing, everything from helping me land on what I wanted and taking me step by step in the process. He was able to understand what I needed and take it to the next level. His skills are unmatched and I strongly recommend him.",
     imgPath: "/images/client4.png",
   },
   {
-    name: "Albert Flores",
-    mentions: "@albertflores",
+    name: "Paulo Dominguez",
+    mentions: "@paulo-dominguez",
+    socialLink: "https://www.linkedin.com/in/paulo-dominguez-500481237",
     review:
       "Adrian was a pleasure to work with. He understood our requirements perfectly and delivered a website that exceeded our expectations. His skills in both frontend and backend dev are top-notch.",
     imgPath: "/images/client6.png",
