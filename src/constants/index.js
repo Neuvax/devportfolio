@@ -180,17 +180,17 @@ const expCards = [
 
 const testimonials = [
   {
-    name: "Wade Warren",
-    mentions: "@wadewarren",
+    name: "Santiago Gonzalez de Cosio",
+    mentions: "@santi_gdc",
     review:
-      "Working with Adrian was a fantastic experience. He transformed our outdated website into a modern, user-friendly platform. His attention to detail and commitment to quality are unmatched. Highly recommend him for any web dev projects.",
+      "Jorge was a reliable, proactive, and collaborative team member who consistently delivered quality work and helped drive the project forward. He showed great skills of adaptability and was always prepared to guide the team to involve new technologies which benefitted the project",
     imgPath: "/images/client1.png",
   },
   {
-    name: "Guy Hawkins",
-    mentions: "@guyhawkins",
+    name: "Jorge Madrigal",
+    mentions: "@madrigal-jer",
     review:
-      "Collaborating with Adrian was an absolute pleasure. His professionalism, promptness, and dedication to delivering exceptional results were evident throughout our project. Adrian's enthusiasm for every facet of development truly stands out. If you're seeking to elevate your website and elevate your brand, Adrian is the ideal partner.",
+      "Jorge is one of the most intelligent people I have worked with. He has outstanding problem-solving skills and an incredible ability to manage both situations and emotions. Technically, I can confidently say that he is a great full-stack developer, especially on the backend. His 'Airbnb Clone' project is the one that impressed me the most.",
     imgPath: "/images/client2.png",
   },
   {
@@ -201,10 +201,10 @@ const testimonials = [
     imgPath: "/images/client3.png",
   },
   {
-    name: "Marvin McKinney",
-    mentions: "@marvinmckinney",
+    name: "Ingrid Gonzalez",
+    mentions: "@ingrid-gonzalez",
     review:
-      "Adrian was a pleasure to work with. He turned our outdated website into a fresh, intuitive platform that’s both modern and easy to navigate. Fantastic work overall.",
+      "Jorge was an excellent collaborator during our Software Engineering degree. He was always clear when explaining, solved complex problems with ease, and was always willing to help. It was truly a pleasure to work with him.",
     imgPath: "/images/client5.png",
   },
   {
