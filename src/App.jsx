@@ -24,7 +24,7 @@ const App = () => {
         <main id="main-content" role="main">
           <Hero />
           <Showcase />
-          <LogoSection />
+          {/* <LogoSection /> */}
           <FeatureCards />
           <ExperienceSection />
           <TechStack />
