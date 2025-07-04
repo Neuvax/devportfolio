@@ -95,7 +95,10 @@ const Showcase = () => {
               >
                 Highly Interactive and Visually Accurate Clone of the Official
                 Apple iPhone 15 Landing Page
-                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300 ease-in-out"></span>
+                {/* Live Demo Badge */}
+                <span className="inline-block ml-3 px-2 py-1 bg-gradient-to-r from-blue-500 to-purple-500 text-white text-xs font-semibold rounded-full opacity-0 group-hover:opacity-100 transform translate-y-1 group-hover:translate-y-0 transition-all duration-300 ease-out">
+                  LIVE DEMO
+                </span>
               </h2>
               <p className="text-white-50 md:text-xl">
                 This project was built using React, Tailwind CSS, GSAP, and
