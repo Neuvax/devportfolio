@@ -19,6 +19,8 @@ const HeroExperience = () => {
   const [performanceLevel, setPerformanceLevel] = useState("medium");
   const [config, setConfig] = useState(PERFORMANCE_CONFIG.models.production);
   const [isOptimizing, setIsOptimizing] = useState(false);
+  const [showRotationHint, setShowRotationHint] = useState(false);
+  const [isHintAnimating, setIsHintAnimating] = useState(false);
 
   useEffect(() => {
     // Mostrar toast de optimización cuando inicia la detección
@@ -52,8 +54,33 @@ const HeroExperience = () => {
       setIsOptimizing(false);
     }, 3000);
 
+    // Mostrar hint de rotación solo en desktop después de 5 segundos
+    if (!isMobile) {
+      const hintTimer = setTimeout(() => {
+        setShowRotationHint(true);
+        setIsHintAnimating(true);
+      }, 5000);
+
+      // Iniciar animación de salida 4.5 segundos después de aparecer
+      const animateOutTimer = setTimeout(() => {
+        setIsHintAnimating(false);
+      }, 9500);
+
+      // Ocultar hint completamente 0.5 segundos después de la animación de salida
+      const hideHintTimer = setTimeout(() => {
+        setShowRotationHint(false);
+      }, 10000);
+
+      return () => {
+        clearTimeout(optimizationTimer);
+        clearTimeout(hintTimer);
+        clearTimeout(animateOutTimer);
+        clearTimeout(hideHintTimer);
+      };
+    }
+
     return () => clearTimeout(optimizationTimer);
-  }, []);
+  }, [isMobile]);
 
   // Si estamos en desarrollo y la configuración dice que usemos imagen estática
   // o si detectamos GPU de muy bajo rendimiento
@@ -62,7 +89,7 @@ const HeroExperience = () => {
     (performanceLevel === "low" && isMobile)
   ) {
     return (
-      <>
+      <div className="relative w-full h-full">
         <OptimizationToast
           isOptimizing={isOptimizing}
           performanceLevel={performanceLevel}
@@ -78,17 +105,46 @@ const HeroExperience = () => {
             3D model deactivated to boost performance.
           </div>
         </div>
-      </>
+      </div>
     );
   }
 
   return (
-    <>
+    <div className="relative w-full h-full">
       <OptimizationToast
         isOptimizing={isOptimizing}
         performanceLevel={performanceLevel}
         onClose={() => setIsOptimizing(false)}
       />
+
+      {/* Rotation Hint - Integrado directamente */}
+      {showRotationHint && !isMobile && (
+        <div
+          className={`absolute bottom-6 left-1/2 transform -translate-x-1/2 z-50 pointer-events-none transition-all duration-500 ease-in-out ${
+            isHintAnimating
+              ? "opacity-100 translate-y-0 scale-100"
+              : "opacity-0 translate-y-4 scale-95"
+          }`}
+        >
+          <div className="bg-black/30 backdrop-blur-sm border border-white/15 rounded-full px-4 py-2 flex items-center space-x-2 text-white/70 text-sm shadow-lg">
+            <svg
+              className="w-4 h-4 animate-spin text-blue-400/70"
+              fill="none"
+              stroke="currentColor"
+              viewBox="0 0 24 24"
+            >
+              <path
+                strokeLinecap="round"
+                strokeLinejoin="round"
+                strokeWidth="2"
+                d="M4 4v5h.582m15.356 2A8.001 8.001 0 004.582 9m0 0H9m11 11v-5h-.581m0 0a8.003 8.003 0 01-15.357-2m15.357 2H15"
+              />
+            </svg>
+            <span>Drag to rotate</span>
+          </div>
+        </div>
+      )}
+
       <Canvas
         camera={{ position: [0, 0, 15], fov: 45 }}
         dpr={[config.dpr, config.dpr * 1.5]} // Ajustar resolución según configuración
@@ -126,7 +182,7 @@ const HeroExperience = () => {
           </group>
         </Suspense>
       </Canvas>
-    </>
+    </div>
   );
 };
 
