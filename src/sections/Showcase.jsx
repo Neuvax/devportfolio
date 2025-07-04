@@ -71,9 +71,31 @@ const Showcase = () => {
               />
             </div>
             <div className="text-content">
-              <h2>
+              <h2
+                className="cursor-pointer hover:text-blue-400 hover:scale-105 transition-all duration-300 ease-in-out hover:drop-shadow-lg active:scale-95 group relative inline-block"
+                onClick={() =>
+                  window.open(
+                    "https://iphone15.jorgewolburg.io",
+                    "_blank",
+                    "noopener,noreferrer"
+                  )
+                }
+                role="button"
+                tabIndex={0}
+                onKeyDown={(e) => {
+                  if (e.key === "Enter" || e.key === " ") {
+                    e.preventDefault();
+                    window.open(
+                      "https://iphone15.jorgewolburg.io",
+                      "_blank",
+                      "noopener,noreferrer"
+                    );
+                  }
+                }}
+              >
                 Highly Interactive and Visually Accurate Clone of the Official
                 Apple iPhone 15 Landing Page
+                <span className="absolute -bottom-1 left-0 w-0 h-0.5 bg-blue-400 group-hover:w-full transition-all duration-300 ease-in-out"></span>
               </h2>
               <p className="text-white-50 md:text-xl">
                 This project was built using React, Tailwind CSS, GSAP, and
